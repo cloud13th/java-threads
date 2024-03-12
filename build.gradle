@@ -1,0 +1,29 @@
+group 'org.cloud13th'
+version '1.1'
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    project.ext {
+        commons_version = '1.11.0'
+        assertj_version = '3.25.3'
+        jupiter_version = '5.10.2'
+        jmh_version = '1.37'
+    }
+
+    dependencies {
+        testImplementation platform('org.junit:junit-bom:5.10.2')
+        testImplementation "org.assertj:assertj-core:${assertj_version}"
+        testImplementation 'org.junit.jupiter:junit-jupiter'
+        testImplementation "org.openjdk.jmh:jmh-generator-annprocess:${jmh_version}"
+        testImplementation "org.openjdk.jmh:jmh-samples:${jmh_version}"
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}

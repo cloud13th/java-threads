@@ -1,0 +1,3 @@
+rootProject.name = 'java-threads'
+include 'normal-threads'
+include 'virtual-threads'
